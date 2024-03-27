@@ -1,0 +1,43 @@
+// Compile with optimizations (causes the bug):
+// glslangValidator --target-env vulkan1.2 -Os -o comp.spv shader.comp
+// Compile without optimizations (avoids the bug):
+// glslangValidator --target-env vulkan1.2 -o comp.spv shader.comp
+
+#version 460
+#extension GL_ARB_separate_shader_objects : enable
+
+layout (local_size_x = 128, local_size_y = 1, local_size_z = 1) in;
+
+struct Pixel {
+  vec4 value;
+};
+
+layout(std140, binding = 0) buffer buf {
+   Pixel imageData[];
+};
+
+layout(push_constant)
+layout(std140) uniform Constants {
+  uint f;
+} constants;
+
+struct Bar {
+  bool b;
+};
+
+void main() {
+  const uint id = uvec2(gl_GlobalInvocationID).x;
+
+  imageData[id].value = vec4(0, 1, 0, 1);
+
+  Bar bar;
+  bar.b = false;
+
+  if (!bool(constants.f) && !bar.b) {
+    return;
+  } else if (bool(constants.f) && !bar.b) {
+    return;
+  }
+
+  imageData[id].value = vec4(1, 0, 0, 1);
+}

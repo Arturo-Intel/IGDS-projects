@@ -1,0 +1,10 @@
+^C:\_BUGS\YUZU\GEOM_CRASH\BUILD\CMAKEFILES\286C943ABE0A8EAE3AD4B693AF5FDEDC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/_bugs/yuzu/geom_crash -BC:/_bugs/yuzu/geom_crash/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/_bugs/yuzu/geom_crash/build/geom_crash.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

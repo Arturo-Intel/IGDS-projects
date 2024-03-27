@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\_bugs\yuzu\geom_crash\build\CMakeFiles\286c943abe0a8eae3ad4b693af5fdedc\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4F4898EE-A790-3685-AD49-DA2CD1CAAFE9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

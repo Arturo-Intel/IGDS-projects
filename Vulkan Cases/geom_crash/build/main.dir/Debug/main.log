@@ -1,0 +1,3 @@
+﻿  Building Custom Rule C:/_bugs/yuzu/geom_crash/CMakeLists.txt
+  main.cpp
+  main.vcxproj -> C:\_bugs\yuzu\geom_crash\build\Debug\main.exe
