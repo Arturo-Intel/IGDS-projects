@@ -1,0 +1,7 @@
+tensorflow==1.14.0
+keras==2.2.4
+gym==0.14.0
+matplotlib
+opencv-python<=3.7.0a0
+pygame==2.5.2
+h5py==2.10.0
